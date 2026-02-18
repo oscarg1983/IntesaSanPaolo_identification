@@ -19,7 +19,7 @@ def lookup_contact(
         print(f"{header_name}: {header_value}")
     
     # Prova a leggere l'header in modo case-insensitive
-    x_api_key = request.headers.get("x_api_key") 
+    x_api_key = request.headers.get("x-api-key") 
     
     # Log di debug (vedrai questo nei log di Render se il valore arriva)
     print(f"Header ricevuto: {x_api_key}") 
