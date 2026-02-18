@@ -61,12 +61,12 @@ def lookup_contact(
         "contactFound": True,
         "records": [
             {
-                "id": "CRM-778899",
-                "type": "retail" if phone.startswith("+39") else "legal",
+                "id": "123456789",
+                "type": "retail", #-- legal --
                 "firstName": "Mario",
                 "lastName": "Rossi",
                 "email": "mario.rossi@example.com",
-                "JMBG": "1234567890123",
+                "JMBG": "123456789",
                 "IntesaMobi_status": "Active",
                 "ConsentID_status": "Enabled",
                 "AML_status": "Clear",
@@ -76,9 +76,9 @@ def lookup_contact(
                 "NativeRM": "Manager_Alpha",
                 "LegalName": "",
                 "MB": "",
-                "segment": "magnifica" if phone.endswith("0") else "premium",
-                "RM": "Direct Channel",
-                "TIN": "IT12345678901",
+                "segment": "magnifica", #-- premium --
+                "RM": "", #-- "Direct Channel" --
+                "TIN": "", #-- "IT12345678901" --
                 "AuthMethod": "SMS_OTP"
             }
         ]
