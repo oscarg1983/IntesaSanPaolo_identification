@@ -55,7 +55,7 @@ def lookup_contact(
             "contactFound": False,
             "records": []
         }
-    if phone == "MULTI":
+    if phone == "+393666742139":
         return {
             "totalSize": 2,
             "requestId": requestId,
