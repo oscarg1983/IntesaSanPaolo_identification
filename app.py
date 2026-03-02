@@ -23,6 +23,7 @@ class ValidateCallWrapper(BaseModel):
 def lookup_contact(
     request: Request,
     phoneNumber: str = Query(..., description="E.164"),
+    type: str = Query(..., description="Retail/Legal"),
     requestId: str = Query(..., description="ID")
 ):
     print("--- DEBUG HEADERS ---")
@@ -54,7 +55,61 @@ def lookup_contact(
             "contactFound": False,
             "records": []
         }
-
+    if phone == "MULTI":
+        "totalSize": 2,
+        "requestId": requestId,
+        "done": True,
+        "contactFound": True,
+        "records": [
+            {
+                "id": "123456789",
+                "type": "retail",
+                "firstName": "Mario",
+                "lastName": "Rossi",
+                "email": "mario.rossi@example.com",
+                "JMBG": "123456789",
+                "IntesaMobi_status": "Active",
+                "ConsentID_status": "Enabled",
+                "AML_status": "Clear",
+                "Rating_status": "Low",
+                "ClientClassification": "Individual",
+                "NativeBranch": "Milan_01",
+                "NativeRM": "Manager_Alpha",
+                "LegalName": "",
+                "CorpId": "",
+                "CIF": "",
+                "MB": "",
+                "segment": "magnifica",
+                "RM": "",
+                "TIN": "",
+                "AuthMethod": "SMS_OTP"
+            },
+            {
+                "id": "234567890",
+                "type": "retail",
+                "firstName": "Giovanni",
+                "lastName": "Verdi",
+                "email": "giovanni.verdi@example.com",
+                "JMBG": "234567890",
+                "IntesaMobi_status": "Active",
+                "ConsentID_status": "Enabled",
+                "AML_status": "Clear",
+                "Rating_status": "Low",
+                "ClientClassification": "Individual",
+                "NativeBranch": "Milan_02",
+                "NativeRM": "Manager_Beta",
+                "LegalName": "",
+                "CorpId": "",
+                "CIF": "",
+                "MB": "",
+                "segment": "magnifica",
+                "RM": "",
+                "TIN": "",
+                "AuthMethod": "WithKey"
+            }
+        ]
+    }
+        
     return {
         "totalSize": 1,
         "requestId": requestId,
