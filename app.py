@@ -147,8 +147,8 @@ def lookup_contact(
 @app.post("/api/v1/validateCall", response_model=ValidateCallWrapper)
 def validate_call(
     request: Request,
-    userId: str = Query(..., description="User ID", example="12345"),
-    token: str = Query(..., description="Auth token", example="abc123xyz"),
+    userId: str = Query(..., description="User ID", example="+393666742138"),
+    token: str = Query(..., description="Auth token", example="963852741"),
     timestamp: Optional[str] = Header(None, description="Unix timestamp", example="1768905669"),
     channel: Optional[str] = Header(None, description="Channel", example="APPLICATION_DIGICAL_MOBILE"),
     sessionId: Optional[str] = Header(None, description="Session ID", example="f2afed31-0cd1-11f1-ae25-df4dd6a2ece2"),
@@ -177,7 +177,7 @@ def validate_call(
         auth_level = "REJECTED"
     elif "pending" in token.lower():
         auth_level = "PENDING"
-    elif userId == "12345" and token == "abc123xyz":
+    elif userId == "+393666742138" and token == "963852741":
         auth_level = "STRONG"
     else:
         auth_level = "SOFT"
