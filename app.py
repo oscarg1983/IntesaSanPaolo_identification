@@ -131,13 +131,13 @@ def lookup_contact(
                 "ClientClassification": "Individual",
                 "NativeBranch": "Milan_01",
                 "NativeRM": "Manager_Alpha",
-                "LegalName": "",
-                "CorpId": "",
-                "CIF": "",
+                "LegalName": "Oscar Gallone",
+                "CorpId": "4567",
+                "CIF": "56789",
                 "MB": "",
                 "segment": "magnifica",
                 "RM": "",
-                "TIN": "",
+                "TIN": "56789",
                 "AuthMethod": "SMS_OTP"
             }
         ]
