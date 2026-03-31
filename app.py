@@ -119,7 +119,8 @@ def lookup_contact(
         "records": [
             {
                 "id": "123456789",
-                "type": "retail",
+                #"type": "retail",
+                "type": "legal",
                 "firstName": "Mario",
                 "lastName": "Rossi",
                 "email": "mario.rossi@example.com",
